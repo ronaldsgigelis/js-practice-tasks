@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: #444;
+}
+
+/* 1. Burbuļi */
+
+#task1Area {
+    height: 180px;
+    background: linear-gradient(#bdefff, #e9fbff);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.task1Bubble {
+    position: absolute;
+    bottom: -40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0, 150, 255, 0.35);
+    border: 1px solid rgba(0, 150, 255, 0.6);
+    animation: bubbleUp 4s linear forwards;
+}
+
+@keyframes bubbleUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-240px);
+        opacity: 0;
+    }
+}
+
+/* 2. Bumba */
+
+#task2Area {
+    height: 180px;
+    position: relative;
+    background: #eef3ff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#task2Ball {
+    width: 50px;
+    height: 50px;
+    background: orange;
+    border-radius: 50%;
+    position: absolute;
+    left: 80px;
+    top: 0;
+}
+
+/* 3. Poga bēg */
+
+#task3Area {
+    height: 180px;
+    position: relative;
+    background: #fff7e6;
+    border-radius: 10px;
+}
+
+#task3Button {
+    position: absolute;
+    left: 40px;
+    top: 70px;
+}
+
+/* 4. Vārti */
+
+#task4Area {
+    height: 190px;
+    background: #eeeeee;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.task4Gate {
+    width: 50%;
+    height: 100%;
+    background: #444;
+    position: absolute;
+    top: 0;
+    transition: 1s;
+}
+
+#task4LeftGate {
+    left: 0;
+}
+
+#task4RightGate {
+    right: 0;
+}
+
+#task4Car {
+    width: 80px;
+    height: 40px;
+    background: red;
+    position: absolute;
+    left: -100px;
+    top: 75px;
+    border-radius: 8px;
+    transition: 1.5s;
+}
+
+#task4Area.open #task4LeftGate {
+    transform: translateX(-100%);
+}
+
+#task4Area.open #task4RightGate {
+    transform: translateX(100%);
+}
+
+#task4Area.open #task4Car {
+    left: 460px;
+}
+
+/* 5. Kvadrāts seko pelei */
+
+#task5Area {
+    height: 180px;
+    background: #f0fff0;
+    border-radius: 10px;
+    position: relative;
+    cursor: crosshair;
+}
+
+#task5Square {
+    width: 35px;
+    height: 35px;
+    background: green;
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    transition: 0.08s;
+}
+
+/* 6. Auto */
+
+#task6Area {
+    height: 160px;
+    background: #e8f5ff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#task6Car {
+    width: 90px;
+    height: 45px;
+    background: blue;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 70px;
+}
+
+.task6Drive {
+    animation: driveCar 4s linear infinite;
+}
+
+@keyframes driveCar {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+/* 7. Lietus */
+
+#task7Area {
+    height: 180px;
+    background: #dce8f2;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.task7Drop {
+    position: absolute;
+    top: -20px;
+    width: 4px;
+    height: 18px;
+    background: #0066cc;
+    border-radius: 4px;
+    animation: rainFall 1.5s linear forwards;
+}
+
+@keyframes rainFall {
+    from {
+        top: -20px;
+    }
+
+    to {
+        top: 210px;
+    }
+}
+
+/* 8. Saule un mākonis */
+
+#task8Area {
+    height: 190px;
+    background: linear-gradient(#87ceeb, #dff6ff);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#task8Sun {
+    width: 70px;
+    height: 70px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    right: 80px;
+    top: 35px;
+}
+
+#task8Cloud {
+    width: 120px;
+    height: 45px;
+    background: white;
+    border-radius: 30px;
+    position: absolute;
+    left: -130px;
+    top: 70px;
+    animation: cloudMove 8s linear infinite;
+}
+
+#task8Cloud::before {
+    content: "";
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    top: -25px;
+}
+
+@keyframes cloudMove {
+    from {
+        left: -140px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+/* 9. Labirints */
+
+#task9Area {
+    width: 100%;
+    height: 260px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    position: relative;
+    border: 2px solid #333;
+}
+
+#task9Player {
+    width: 25px;
+    height: 25px;
+    background: red;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.task9Wall {
+    position: absolute;
+    background: #333;
+}
+
+#task9Wall1 {
+    left: 100px;
+    top: 0;
+    width: 20px;
+    height: 180px;
+}
+
+#task9Wall2 {
+    left: 220px;
+    top: 80px;
+    width: 20px;
+    height: 180px;
+}
+
+#task9Wall3 {
+    left: 340px;
+    top: 0;
+    width: 20px;
+    height: 180px;
+}
+
+#task9Finish {
+    width: 45px;
+    height: 45px;
+    background: limegreen;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+/* 10. Lēkājošs kvadrāts */
+
+#task10Section {
+    min-height: 260px;
+}
+
+#task10Square {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    left: 160px;
+    top: 95px;
+    transition: 0.4s;
+}
